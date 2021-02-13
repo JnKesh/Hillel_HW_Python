@@ -1,0 +1,1 @@
+print(input('Enter text here: ').count(' ') + 1)
