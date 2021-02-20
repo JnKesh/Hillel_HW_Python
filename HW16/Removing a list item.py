@@ -1,9 +1,9 @@
-from random import randint  # Отсылка к серверу за рандомными числами
+from random import randint
 
-a = [randint(1, 20) for _ in range(10)]  # Обращение к серверу за рандомными числами
-print(", ".join(str(e) for e in a))  # Вывод списка с рандомными числами
-k = int(input('Enter index: '))  # Индекс элемента в списке
+a = [randint(1, 20) for _ in range(10)]
+print(", ".join(str(e) for e in a))
+k = int(input('Enter index: '))
 for i in range(k + 1, len(a)):
-    a[i - 1] = a[i]  # Сдвиг списка
+    a[i - 1] = a[i]
 a.pop()
 print(', '.join([str(i) for i in a]))
