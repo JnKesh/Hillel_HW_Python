@@ -5,15 +5,15 @@ lst = [[randint(1, 50) for _ in range(m)] for _ in range(m)]
 
 
 def sortMatrix(matrix):
-    sum_colum = [0 for i in range(m)]
+    sum_column = [0 for i in range(m)]
     for j in range(len(lst)):
-        sum_colum = [sum_colum[index] + i for index, i in enumerate(lst[j])]
-    print(sum_colum)
+        sum_column = [sum_column[index] + i for index, i in enumerate(lst[j])]
+    print(sum_column)
 
-    for i in range(len(sum_colum) - 1):
-        for y in range(len(sum_colum) - 1 - i):
-            if sum_colum[y] >= sum_colum[y + 1]:
-                sum_colum[y], sum_colum[y + 1] = sum_colum[y + 1], sum_colum[y]
+    for i in range(len(sum_column) - 1):
+        for y in range(len(sum_column) - 1 - i):
+            if sum_column[y] >= sum_column[y + 1]:
+                sum_column[y], sum_column[y + 1] = sum_column[y + 1], sum_column[y]
                 for j in range(len(lst)):
                     matrix[j][y], matrix[j][y + 1] = matrix[j][y + 1], matrix[j][y]
 
@@ -36,12 +36,12 @@ def lprint(matrix1):
             print('{:<3}'.format(lst[i][y]), end='   ')
         print()
 
-    sum_colum = [0 for i in range(m)]
+    sum_column = [0 for i in range(m)]
     for j in range(len(lst)):
-        sum_colum = [sum_colum[index] + i for index, i in enumerate(lst[y])]
+        sum_column = [sum_column[index] + i for index, i in enumerate(lst[y])]
 
-    for i in range(len(sum_colum)):
-        print('{:<3}'.format(sum_colum[i]), end='   ')
+    for i in range(len(sum_column)):
+        print('{:<3}'.format(sum_column[i]), end='   ')
     print()
 
 
