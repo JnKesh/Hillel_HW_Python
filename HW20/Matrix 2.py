@@ -1,23 +1,22 @@
 from random import randint
 
-m = int(input("Enter the number of rows: "))
-n = int(input("Enter the number of columns: "))
-a = []
+r = int(input("Enter the number of rows: "))
+c = int(input("Enter the number of columns: "))
 
-lst = [[randint(1, 50) for _ in range(m)] for _ in range(n)]
+lst_column = [[randint(1, 50) for lst in range(c)] for lst2 in range(r)]
+total_sum = 0
 
-# sum rows
-sum_m = [0] * len(lst)
-for i, row in enumerate(lst):
-    for item in row:
-        sum_m[i] += item
-
-# sum columns
-sum_n = [0] * len(lst[0])
-for row in lst:
-    for i, item in enumerate(row):
-        sum_n[i] += item
-
-print(sum_m)
+for lst2 in range(r):
+    for lst in range(c):
+        total_sum += lst_column[lst2][lst]
+        print("{:<3}".format(lst_column[lst2][lst]), end="  ")
+    print("    ", total_sum)
+    total_sum = 0
 print()
-print(sum_n)
+
+total_sum1 = [0 for lst in range(c)]
+for y in range(len(lst_column)):
+    total_sum1 = [total_sum1[index] + lst for index, lst in enumerate(lst_column[y])]
+
+for lst in range(len(total_sum1)):
+    print("{:<3}".format(total_sum1[lst]), end="  ")
