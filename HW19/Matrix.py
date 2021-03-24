@@ -1,6 +1,6 @@
 from random import randint
 
-m = int(input("Введите размер матрицы: "))
+m = int(input("Enter size of matrix: "))
 lst = [[randint(1, 50) for _ in range(m)] for _ in range(m)]
 
 
